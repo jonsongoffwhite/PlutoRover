@@ -40,14 +40,25 @@ public class Rover {
 
     // Moves the rover forwards
     private void forward() {
-        x = (x + orientation.i + grid.xSize) % grid.xSize;
-        y = (y + orientation.j + grid.ySize) % grid.ySize;
+        int newX = (x + orientation.i + grid.xSize) % grid.xSize;
+        int newY = (y + orientation.j + grid.ySize) % grid.ySize;
+
+        if (!grid.obstacleMap[newX][newY]) {
+            x = newX;
+            y = newY;
+        }
+
     }
 
     // Moves the rover backwards
     private void backward() {
-        x = (x - orientation.i + grid.xSize) % grid.xSize;
-        y = (y - orientation.j + grid.ySize) % grid.ySize;
+        int newX = (x - orientation.i + grid.xSize) % grid.xSize;
+        int newY = (y - orientation.j + grid.ySize) % grid.ySize;
+
+        if (!grid.obstacleMap[newX][newY]) {
+            x = newX;
+            y = newY;
+        }
     }
 
     // Rotates the rover left
