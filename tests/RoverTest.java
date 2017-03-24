@@ -89,7 +89,7 @@ public class RoverTest {
 
         assertThat(rover.getX(), is(0));
         assertThat(rover.getY(), is(99));
-        assertThat(rover.getOrientation(), is(Orientation.W));
+        assertThat(rover.getOrientation(), is(Orientation.N));
     }
 
 }
