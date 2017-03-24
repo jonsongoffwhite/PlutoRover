@@ -144,7 +144,8 @@ public class RoverTest {
 
         Rover rover = new Rover(0, 0, Orientation.N, grid);
 
-        boolean interrupted = rover.run("FFFF");
+        rover.run("FFFF");
+        boolean interrupted = rover.didEncounterObstacle();
 
         assertThat(rover.getX(), is(0));
         assertThat(rover.getY(), is(2));
@@ -165,7 +166,8 @@ public class RoverTest {
 
         Rover rover = new Rover(0, 0, Orientation.N, grid);
 
-        boolean interrupted = rover.run("F");
+        rover.run("F");
+        boolean interrupted = rover.didEncounterObstacle();
 
         assertThat(rover.getX(), is(0));
         assertThat(rover.getY(), is(0));
@@ -179,7 +181,8 @@ public class RoverTest {
 
         Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
 
-        boolean interrupted = rover.run("FFRFF");
+        rover.run("FFRFF");
+        boolean interrupted = rover.didEncounterObstacle();
 
         assertThat(rover.getX(), is(2));
         assertThat(rover.getY(), is(2));

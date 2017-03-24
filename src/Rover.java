@@ -8,6 +8,10 @@ public class Rover {
     private int y;
     private Orientation orientation;
 
+    // Indicates whether the rover encountered an obstacle on its last run
+    private boolean encounteredObstacle;
+
+    // The grid that the rover is roaming
     private Grid grid;
 
     public Rover(int x, int y, Orientation orientation, Grid grid) {
@@ -20,6 +24,8 @@ public class Rover {
     public int getX() {return x;}
     public int getY() {return y;}
     public Orientation getOrientation() {return orientation;}
+
+    public boolean didEncounterObstacle() {return encounteredObstacle;}
 
     // Runs a string of commands, returns false if uninterrupted
     public boolean run(String commands) {
