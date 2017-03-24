@@ -22,10 +22,13 @@ public class Rover {
     }
 
     public int getX() {return x;}
+
     public int getY() {return y;}
+
     public Orientation getOrientation() {return orientation;}
 
     public boolean didEncounterObstacle() {return encounteredObstacle;}
+
 
     // Runs a string of commands
     public void run(String commands) {
@@ -85,7 +88,4 @@ public class Rover {
     private void right() {
         orientation = orientation.rotateClockwise();
     }
-
-
-
 }
