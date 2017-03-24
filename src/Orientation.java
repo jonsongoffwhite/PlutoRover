@@ -17,7 +17,7 @@ public enum Orientation {
         return Orientation.values()[(this.ordinal()+1) % 4];
     }
 
-    // Returns the orientation anit-clockwise on a compass to the current
+    // Returns the orientation anti-clockwise on a compass to the current
     public Orientation rotateAnticlockwise() {
         return Orientation.values()[(this.ordinal()+3) % 4];
     }

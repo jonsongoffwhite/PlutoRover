@@ -45,10 +45,11 @@ public class Rover {
         int newX = (x + orientation.i + grid.xSize) % grid.xSize;
         int newY = (y + orientation.j + grid.ySize) % grid.ySize;
 
-        if (!grid.obstacleMap[newX][newY]) {
-            x = newX;
-            y = newY;
-        }
+        if (grid.obstacleMap[newX][newY])
+            return true;
+
+        x = newX;
+        y = newY;
 
         return false;
     }
@@ -58,10 +59,11 @@ public class Rover {
         int newX = (x - orientation.i + grid.xSize) % grid.xSize;
         int newY = (y - orientation.j + grid.ySize) % grid.ySize;
 
-        if (!grid.obstacleMap[newX][newY]) {
-            x = newX;
-            y = newY;
-        }
+        if (grid.obstacleMap[newX][newY])
+            return true;
+
+        x = newX;
+        y = newY;
 
         return false;
     }
