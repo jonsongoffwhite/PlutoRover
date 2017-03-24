@@ -14,6 +14,7 @@ public class Grid {
     // Map representing which co-ordinates contain obstacles
     public final boolean[][] obstacleMap;
 
+    // Initialise with no obstacles
     public Grid(int xSize, int ySize) {
         this.xSize = xSize;
         this.ySize = ySize;
@@ -21,6 +22,7 @@ public class Grid {
         this.obstacleMap = new boolean[xSize][ySize];
     }
 
+    // Initialise with provided obstacle map
     public Grid(int xSize, int ySize, boolean[][] obstacleMap) {
         this.xSize = xSize;
         this.ySize = ySize;
