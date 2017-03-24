@@ -56,4 +56,16 @@ public class RoverTest {
         assertThat(rover.getOrientation(), is(Orientation.E));
     }
 
+    @Test
+    public void compoundCommandTest() throws Exception {
+
+        Rover rover = new Rover(0, 0, Orientation.N);
+
+        rover.run("FFRFF");
+
+        assertThat(rover.getX(), is(2));
+        assertThat(rover.getY(), is(2));
+        assertThat(rover.getOrientation(), is(Orientation.E));
+    }
+
 }
