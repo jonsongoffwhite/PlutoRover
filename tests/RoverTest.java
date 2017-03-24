@@ -11,7 +11,7 @@ public class RoverTest {
     @Test
     public void forwardCommandTest() throws Exception {
 
-        Rover rover = new Rover(0, 0, Orientation.N);
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
 
         rover.run("F");
 
@@ -23,7 +23,7 @@ public class RoverTest {
     @Test
     public void backwardCommandTest() throws Exception {
 
-        Rover rover = new Rover(1, 1, Orientation.N);
+        Rover rover = new Rover(1, 1, Orientation.N, new Grid(100, 100));
 
         rover.run("B");
 
@@ -35,7 +35,7 @@ public class RoverTest {
     @Test
     public void rotationLeftCommandTest() throws Exception {
 
-        Rover rover = new Rover(0, 0, Orientation.N);
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
 
         rover.run("L");
 
@@ -47,7 +47,7 @@ public class RoverTest {
     @Test
     public void rotationRightCommandTest() throws Exception {
 
-        Rover rover = new Rover(0, 0, Orientation.N);
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
 
         rover.run("R");
 
@@ -59,7 +59,7 @@ public class RoverTest {
     @Test
     public void compoundCommandTest() throws Exception {
 
-        Rover rover = new Rover(0, 0, Orientation.N);
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
 
         rover.run("FFRFF");
 

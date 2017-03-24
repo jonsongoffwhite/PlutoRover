@@ -8,10 +8,13 @@ public class Rover {
     private int y;
     private Orientation orientation;
 
-    public Rover(int x, int y, Orientation orientation) {
+    private Grid grid;
+
+    public Rover(int x, int y, Orientation orientation, Grid grid) {
         this.x = x;
         this.y = y;
         this.orientation = orientation;
+        this.grid = grid;
     }
 
     public int getX() {return x;}
