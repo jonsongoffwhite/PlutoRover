@@ -14,6 +14,10 @@ public class Rover {
         this.orientation = orientation;
     }
 
+    public int getX() {return x;}
+    public int getY() {return y;}
+    public Orientation getOrientation() {return orientation;}
+
     // Runs a string of commands
     public void run(String commands) {
 
