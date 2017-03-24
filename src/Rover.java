@@ -20,12 +20,43 @@ public class Rover {
 
     // Runs a string of commands
     public void run(String commands) {
-
+        for (char c : commands.toCharArray()) {
+            execute(c);
+        }
     }
 
     // Executes a single command
-    private void execute(String command) {
-
+    private void execute(char command) {
+        switch (command) {
+            case 'F': forward(); break;
+            case 'B': backward(); break;
+            case 'L': left(); break;
+            case 'R': right(); break;
+        }
     }
+
+    // Moves the rover forwards
+    private void forward() {
+        x += orientation.i;
+        y += orientation.j;
+    }
+
+    // Moves the rover backwards
+    private void backward() {
+        x -= orientation.i;
+        y -= orientation.j;
+    }
+
+    // Rotates the rover left
+    private void left() {
+        orientation = orientation.rotateAnticlockwise();
+    }
+
+    // Rotates the rover right
+    private void right() {
+        orientation = orientation.rotateClockwise();
+    }
+
+
 
 }
