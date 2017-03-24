@@ -68,4 +68,28 @@ public class RoverTest {
         assertThat(rover.getOrientation(), is(Orientation.E));
     }
 
+    @Test
+    public void wrappingXMovementTest() throws Exception {
+
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
+
+        rover.run("LF");
+
+        assertThat(rover.getX(), is(99));
+        assertThat(rover.getY(), is(0));
+        assertThat(rover.getOrientation(), is(Orientation.W));
+    }
+
+    @Test
+    public void wrappingYMovementTest() throws Exception {
+
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
+
+        rover.run("B");
+
+        assertThat(rover.getX(), is(0));
+        assertThat(rover.getY(), is(99));
+        assertThat(rover.getOrientation(), is(Orientation.W));
+    }
+
 }
