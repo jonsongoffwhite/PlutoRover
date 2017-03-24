@@ -11,4 +11,12 @@ public enum Orientation {
         this.i = i;
         this.j = j;
     }
+
+    public Orientation rotateClockwise() {
+        return null;
+    }
+
+    public Orientation rotateAnticlockwise() {
+        return null;
+    }
 }
