@@ -132,4 +132,61 @@ public class RoverTest {
 
     }
 
+    @Test
+    public void obstacleDetectionWithReportTest() throws Exception {
+
+        int xSize = 100;
+        int ySize = 100;
+        boolean[][] obstacleMap = new boolean[xSize][ySize];
+        obstacleMap[0][3] = true;
+
+        Grid grid = new Grid(xSize, ySize, obstacleMap);
+
+        Rover rover = new Rover(0, 0, Orientation.N, grid);
+
+        boolean interrupted = rover.run("FFFF");
+
+        assertThat(rover.getX(), is(0));
+        assertThat(rover.getY(), is(2));
+        assertThat(rover.getOrientation(), is(Orientation.N));
+        assertThat(interrupted, is(true));
+
+    }
+
+    @Test
+    public void immediateObstacleDetectionWithReportTest() throws Exception {
+
+        int xSize = 100;
+        int ySize = 100;
+        boolean[][] obstacleMap = new boolean[xSize][ySize];
+        obstacleMap[0][1] = true;
+
+        Grid grid = new Grid(xSize, ySize, obstacleMap);
+
+        Rover rover = new Rover(0, 0, Orientation.N, grid);
+
+        boolean interrupted = rover.run("F");
+
+        assertThat(rover.getX(), is(0));
+        assertThat(rover.getY(), is(0));
+        assertThat(rover.getOrientation(), is(Orientation.N));
+        assertThat(interrupted, is(true));
+
+    }
+
+    @Test
+    public void normalMovementWithReportTest() throws Exception {
+
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
+
+        boolean interrupted = rover.run("FFRFF");
+
+        assertThat(rover.getX(), is(2));
+        assertThat(rover.getY(), is(2));
+        assertThat(rover.getOrientation(), is(Orientation.E));
+        assertThat(interrupted, is(false));
+
+
+    }
+
 }
