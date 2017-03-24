@@ -57,6 +57,17 @@ public class RoverTest {
     }
 
     @Test
+    public void invalidCommandTest() throws Exception {
+        Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
+
+        rover.run("A");
+
+        assertThat(rover.getX(), is(0));
+        assertThat(rover.getY(), is(0));
+        assertThat(rover.getOrientation(), is(Orientation.N));
+    }
+
+    @Test
     public void compoundCommandTest() throws Exception {
 
         Rover rover = new Rover(0, 0, Orientation.N, new Grid(100, 100));
