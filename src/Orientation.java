@@ -12,11 +12,13 @@ public enum Orientation {
         this.j = j;
     }
 
+    // Returns the orientation clockwise on a compass to the current
     public Orientation rotateClockwise() {
-        return null;
+        return Orientation.values()[(this.ordinal()+1) % 4];
     }
 
+    // Returns the orientation anit-clockwise on a compass to the current
     public Orientation rotateAnticlockwise() {
-        return null;
+        return Orientation.values()[(this.ordinal()+3) % 4];
     }
 }
